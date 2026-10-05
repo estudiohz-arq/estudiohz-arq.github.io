@@ -271,7 +271,7 @@
           </p>
         </div>
         <div class="bg-stone-200 aspect-[4/3] rounded-xl overflow-hidden">
-          <img data-cover="project1" alt="Estudio HZ" class="w-full h-full object-cover grayscale">
+          <img data-cover="project2" alt="Estudio HZ" class="w-full h-full object-cover grayscale">
         </div>
       </div>
     </section>
@@ -291,9 +291,20 @@
 
   <!-- FOOTER -->
   <footer class="border-t border-[#e3ddcd] py-12">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-xs text-stone-500">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-stone-500">
       <p>© 2026 Estudio HZ. Todos los derechos reservados.</p>
-      <p class="mt-4 md:mt-0">Buenos Aires, Argentina</p>
+      <div class="flex items-center gap-3">
+        <a id="linkWhatsapp" href="https://wa.me/5491164675558" target="_blank" rel="noopener" aria-label="WhatsApp" class="social w-11 h-11 rounded-full border border-stone-300 flex items-center justify-center text-stone-700 hover:bg-[color:var(--accent)] hover:border-[color:var(--accent)] hover:text-white">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a id="linkInstagram" href="#" target="_blank" rel="noopener" aria-label="Instagram" class="social w-11 h-11 rounded-full border border-stone-300 flex items-center justify-center text-stone-700 hover:bg-[color:var(--accent)] hover:border-[color:var(--accent)] hover:text-white">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a id="linkGmail" href="#" aria-label="Gmail" class="social w-11 h-11 rounded-full border border-stone-300 flex items-center justify-center text-stone-700 hover:bg-[color:var(--accent)] hover:border-[color:var(--accent)] hover:text-white">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+      <p>Buenos Aires, Argentina</p>
     </div>
   </footer>
 
@@ -340,87 +351,104 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    // "folders" = nombres de carpeta posibles dentro de /images (el primero que exista se usa).
+    // ====== COMPLETAR TUS DATOS ======
+    const INSTAGRAM_URL = "https://www.instagram.com/TU_USUARIO/";
+    const EMAIL = "tuemail@gmail.com";
+    // =================================
+
+    document.getElementById('linkInstagram').href = INSTAGRAM_URL;
+    document.getElementById('linkGmail').href = `mailto:${EMAIL}`;
+
+    const range = (n) => Array.from({ length: n }, (_, k) => (k + 1 < 10 ? `0${k + 1}` : `${k + 1}`));
+
+    // folders: nombres posibles de carpeta dentro de /images
+    // files: nombres de las fotos (sin extensión). Si se omite, prueba 01 a 15.
     const projectData = {
       project1: {
-        title: "CS 85",
-        meta: "Buenos Aires · Proyecto",
-        surface: "Consultar superficie",
-        location: "Buenos Aires",
+        title: "CS 85", meta: "Buenos Aires · Proyecto",
+        surface: "Consultar superficie", location: "Buenos Aires",
         desc: "Desarrollo volumétrico enfocado en la pureza de líneas y la optimización de la luz natural. El proyecto resuelve la planta en torno a patios internos que conectan visualmente las áreas sociales con el exterior.",
-        folders: ["cs-85", "cs85", "cs"]
+        folders: ["cs-85", "cs85"], files: range(15)
       },
       project2: {
-        title: "Chacras de la Reserva",
-        meta: "Buenos Aires · Proyecto",
-        surface: "120 m² cubiertos · 50 m² semicubiertos",
-        location: "Buenos Aires",
+        title: "Chacras de la Reserva", meta: "Buenos Aires · Proyecto",
+        surface: "120 m² cubiertos · 50 m² semicubiertos", location: "Buenos Aires",
         desc: "Vivienda unifamiliar planteada en una sola planta con una fuerte integración al entorno natural. El diseño prioriza espacios amplios, visuales limpias hacia el paisaje y galerías exteriores que extienden el área social.",
-        folders: ["chacras-de-la-reserva-156", "chacras-de-la-reserva", "chacras"]
+        folders: ["chacras-de-la-reserva-156", "chacras-de-la-reserva"], files: ["01", "02", "03", "04"]
       },
       project3: {
-        title: "Bali Ecoislandia",
-        meta: "Escobar · Anteproyecto",
-        surface: "Consultar superficie",
-        location: "Escobar",
+        title: "Bali Ecoislandia", meta: "Escobar · Anteproyecto",
+        surface: "Consultar superficie", location: "Escobar",
         desc: "Anteproyecto residencial con criterios bioclimáticos e integración paisajística en Escobar. Uso de envolventes eficientes y ventilaciones cruzadas controladas.",
-        folders: ["bali-ecoislandia", "bali"]
+        folders: ["bali-ecoislandia"], files: ["01", "02", "03", "04"]
       },
       project4: {
-        title: "Lujan L4",
-        meta: "Luján · Proyecto",
-        surface: "120 m² cubiertos · 60 m² semicubiertos",
-        location: "Luján",
+        title: "Lujan L4", meta: "Luján · Proyecto",
+        surface: "120 m² cubiertos · 60 m² semicubiertos", location: "Luján",
         desc: "Vivienda moderna de una sola planta. Estructura sintética y volúmenes puros en relación directa con el entorno.",
-        folders: ["lujan-l4", "lujan"]
+        folders: ["lujan-l4", "lujan"], files: range(15)
       },
       project5: {
-        title: "Barrio Alameda",
-        meta: "Buenos Aires · Proyecto",
-        surface: "200 m² cubiertos · 100 m² semicubiertos",
-        location: "Buenos Aires",
+        title: "Barrio Alameda", meta: "Buenos Aires · Proyecto",
+        surface: "200 m² cubiertos · 100 m² semicubiertos", location: "Buenos Aires",
         desc: "Proyecto residencial en barrio cerrado con estudio integral de fachadas, organización espacial y diseño interior.",
-        folders: ["barrio-alameda-244", "barrio-alameda", "alameda"]
+        folders: ["barrio-alameda-244", "barrio-alameda"], files: range(15)
       },
       project6: {
-        title: "Barrio Cazal",
-        meta: "Buenos Aires - Escobar · Proyecto",
-        surface: "200 m² cubiertos · 35 m² semicubiertos",
-        location: "Buenos Aires - Escobar",
+        title: "Barrio Cazal", meta: "Buenos Aires - Escobar · Proyecto",
+        surface: "200 m² cubiertos · 35 m² semicubiertos", location: "Buenos Aires - Escobar",
         desc: "Desarrollo y visualización espacial de vivienda contemporánea en entorno natural de Escobar. Énfasis en la espacialidad y materialidad.",
-        folders: ["cazal-235", "cazal"]
+        folders: ["cazal-235", "cazal"], files: ["01", "07", "09"]
       }
     };
 
-    const EXTS = ["jpg", "JPG", "jpeg", "JPEG", "png", "webp"];
-    const pad = (n) => (n < 10 ? `0${n}` : `${n}`);
+    // Extensiones posibles (incluye dobles como 04.jpg.jpg)
+    const EXTS = ["jpg", "JPG", "jpeg", "JPEG", "png", "webp", "jpg.jpg", "JPG.JPG", "jpeg.jpeg", "png.png"];
 
     const tryLoad = (src) => new Promise((resolve) => {
       const im = new Image();
-      im.onload = () => resolve(true);
-      im.onerror = () => resolve(false);
+      im.onload = () => resolve(src);
+      im.onerror = () => resolve(null);
       im.src = src;
     });
 
-    // Encuentra qué carpeta y extensión funcionan realmente para cada proyecto.
-    const resolved = {};
-    const resolveProject = (id) => {
-      if (resolved[id]) return resolved[id];
-      resolved[id] = (async () => {
-        for (const folder of projectData[id].folders) {
-          for (const ext of EXTS) {
-            if (await tryLoad(`images/${folder}/01.${ext}`)) return { folder, ext };
-          }
+    // Para una foto, devuelve la primera URL que exista (probando extensiones)
+    const findImage = async (folder, name) => {
+      const results = await Promise.all(EXTS.map((e) => tryLoad(`images/${folder}/${name}.${e}`)));
+      return results.find(Boolean) || null;
+    };
+
+    // Devuelve la lista de URLs válidas de un proyecto (cacheada)
+    const cache = {};
+    const getImages = (id) => {
+      if (cache[id]) return cache[id];
+      cache[id] = (async () => {
+        const { folders, files } = projectData[id];
+        for (const folder of folders) {
+          const first = await findImage(folder, files[0]);
+          if (!first) continue;
+          const rest = await Promise.all(files.slice(1).map((n) => findImage(folder, n)));
+          return [first, ...rest.filter(Boolean)];
         }
-        return null;
+        return [];
       })();
-      return resolved[id];
+      return cache[id];
     };
 
     // Portadas
     document.querySelectorAll('img[data-cover]').forEach(async (img) => {
-      const found = await resolveProject(img.dataset.cover);
-      if (found) img.src = `images/${found.folder}/01.${found.ext}`;
+      const list = await getImages(img.dataset.cover);
+      if (list.length) {
+        img.src = list[0];
+      } else {
+        img.style.display = 'none';
+        const wrap = img.parentElement;
+        wrap.classList.add('flex', 'items-center', 'justify-center');
+        const ph = document.createElement('span');
+        ph.className = 'text-xs uppercase tracking-widest text-stone-400';
+        ph.textContent = 'Próximamente';
+        wrap.prepend(ph);
+      }
     });
 
     const modal = document.getElementById('projectModal');
@@ -436,7 +464,7 @@
       document.getElementById('specLocation').innerText = data.location;
 
       const gallery = document.getElementById('modalGallery');
-      gallery.innerHTML = '';
+      gallery.innerHTML = '<p class="text-xs text-stone-400">Cargando imágenes…</p>';
 
       const whatsappText = encodeURIComponent(`Hola! Me interesa conversar sobre un proyecto similar a ${data.title}.`);
       document.getElementById('modalCta').href = `https://wa.me/5491164675558?text=${whatsappText}`;
@@ -444,16 +472,19 @@
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
 
-      const found = await resolveProject(id);
-      if (!found) return;
-      for (let i = 1; i <= 15; i++) {
+      const list = await getImages(id);
+      gallery.innerHTML = '';
+      if (!list.length) {
+        gallery.innerHTML = '<p class="text-xs text-stone-400">Las imágenes de este proyecto estarán disponibles pronto.</p>';
+        return;
+      }
+      list.forEach((src) => {
         const img = document.createElement('img');
-        img.src = `images/${found.folder}/${pad(i)}.${found.ext}`;
+        img.src = src;
         img.alt = data.title;
         img.loading = 'lazy';
-        img.onerror = function () { this.style.display = 'none'; };
         gallery.appendChild(img);
-      }
+      });
     };
 
     const closeProjectModal = () => {
@@ -461,10 +492,7 @@
       document.body.style.overflow = 'auto';
     };
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeProjectModal();
-    });
-
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeProjectModal(); });
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.classList.contains('active')) closeProjectModal();
     });
@@ -472,7 +500,7 @@
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
     menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
-    document.querySelectorAll('.mobile-link').forEach(link => {
+    document.querySelectorAll('.mobile-link').forEach((link) => {
       link.addEventListener('click', () => mobileNav.classList.add('hidden'));
     });
   </script>
