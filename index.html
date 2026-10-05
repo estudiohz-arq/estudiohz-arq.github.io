@@ -357,7 +357,10 @@
     // =================================
 
     document.getElementById('linkInstagram').href = INSTAGRAM_URL;
-    document.getElementById('linkGmail').href = `mailto:${EMAIL}`;
+    const gmailLink = document.getElementById('linkGmail');
+    gmailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}&su=${encodeURIComponent('Consulta desde la web')}`;
+    gmailLink.target = '_blank';
+    gmailLink.rel = 'noopener';
 
     const range = (n) => Array.from({ length: n }, (_, k) => (k + 1 < 10 ? `0${k + 1}` : `${k + 1}`));
 
