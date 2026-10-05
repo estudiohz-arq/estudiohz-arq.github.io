@@ -98,6 +98,7 @@
       bottom: 14px;
       left: 16px;
       right: 16px;
+      z-index: 2;
       color: #fff;
       font-size: 11px;
       letter-spacing: .06em;
@@ -197,7 +198,7 @@
         <!-- Project 1 -->
         <div onclick="openProjectModal('project1')" class="project-card group cursor-pointer">
           <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
-            <img src="images/cs-85/01.jpg" alt="CS 85" class="w-full h-full object-cover rounded-xl">
+            <img data-cover="project1" alt="CS 85" class="w-full h-full object-cover rounded-xl">
             <span class="hover-tag">Ver galería del proyecto →</span>
           </div>
           <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Buenos Aires · Proyecto</span>
@@ -207,7 +208,7 @@
         <!-- Project 2 -->
         <div onclick="openProjectModal('project2')" class="project-card group cursor-pointer">
           <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
-            <img src="images/chacras-de-la-reserva-156/01.jpg" alt="Chacras de la Reserva" class="w-full h-full object-cover rounded-xl">
+            <img data-cover="project2" alt="Chacras de la Reserva" class="w-full h-full object-cover rounded-xl">
             <span class="hover-tag">Ver galería del proyecto →</span>
           </div>
           <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Buenos Aires · Proyecto</span>
@@ -217,7 +218,7 @@
         <!-- Project 3 -->
         <div onclick="openProjectModal('project3')" class="project-card group cursor-pointer">
           <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
-            <img src="images/bali-ecoislandia/01.jpg" alt="Bali Ecoislandia" class="w-full h-full object-cover rounded-xl">
+            <img data-cover="project3" alt="Bali Ecoislandia" class="w-full h-full object-cover rounded-xl">
             <span class="hover-tag">Ver galería del proyecto →</span>
           </div>
           <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Escobar · Anteproyecto</span>
@@ -227,27 +228,27 @@
         <!-- Project 4 -->
         <div onclick="openProjectModal('project4')" class="project-card group cursor-pointer">
           <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
-            <img src="images/lujan-l4/01.jpg" alt="Lujan L4" class="w-full h-full object-cover rounded-xl">
+            <img data-cover="project4" alt="Lujan L4" class="w-full h-full object-cover rounded-xl">
             <span class="hover-tag">Ver galería del proyecto →</span>
           </div>
-          <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Luján · Anteproyecto</span>
+          <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Luján · Proyecto</span>
           <h3 class="text-xl font-medium tracking-tight group-hover:text-[color:var(--accent)] transition">Lujan L4</h3>
         </div>
 
         <!-- Project 5 -->
         <div onclick="openProjectModal('project5')" class="project-card group cursor-pointer">
           <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
-            <img src="images/barrio-alameda-244/01.jpg" alt="Barrio Alameda Lote 244" class="w-full h-full object-cover rounded-xl">
+            <img data-cover="project5" alt="Barrio Alameda" class="w-full h-full object-cover rounded-xl">
             <span class="hover-tag">Ver galería del proyecto →</span>
           </div>
-          <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Buenos Aires · Reforma</span>
-          <h3 class="text-xl font-medium tracking-tight group-hover:text-[color:var(--accent)] transition">Barrio Alameda Lote 244</h3>
+          <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Buenos Aires · Proyecto</span>
+          <h3 class="text-xl font-medium tracking-tight group-hover:text-[color:var(--accent)] transition">Barrio Alameda</h3>
         </div>
 
         <!-- Project 6 -->
         <div onclick="openProjectModal('project6')" class="project-card group cursor-pointer">
           <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
-            <img src="images/cazal-235/01.jpg" alt="Barrio Cazal" class="w-full h-full object-cover rounded-xl">
+            <img data-cover="project6" alt="Barrio Cazal" class="w-full h-full object-cover rounded-xl">
             <span class="hover-tag">Ver galería del proyecto →</span>
           </div>
           <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Buenos Aires - Escobar · Proyecto</span>
@@ -270,7 +271,7 @@
           </p>
         </div>
         <div class="bg-stone-200 aspect-[4/3] rounded-xl overflow-hidden">
-          <img src="images/cs-85/01.jpg" alt="Estudio HZ" class="w-full h-full object-cover grayscale">
+          <img data-cover="project1" alt="Estudio HZ" class="w-full h-full object-cover grayscale">
         </div>
       </div>
     </section>
@@ -299,7 +300,6 @@
   <!-- MODAL -->
   <div id="projectModal" class="modal fixed inset-0 z-50 bg-black/70 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto">
     <div class="bg-white w-full max-w-3xl rounded-xl overflow-hidden shadow-2xl relative my-8 max-h-[90vh] flex flex-col">
-      <!-- Modal Header -->
       <div class="p-6 border-b border-stone-200 flex justify-between items-center bg-white sticky top-0 z-10">
         <div>
           <span id="modalMeta" class="text-[11px] uppercase tracking-wider font-semibold block mb-1" style="color:var(--accent)"></span>
@@ -310,11 +310,9 @@
         </button>
       </div>
 
-      <!-- Modal Body -->
       <div class="p-6 overflow-y-auto flex-1 space-y-6">
         <p id="modalDesc" class="text-stone-600 leading-relaxed"></p>
 
-        <!-- Detalle Técnico -->
         <div class="bg-stone-50 p-4 rounded-lg border border-stone-200 grid grid-cols-2 gap-4 text-xs">
           <div>
             <span class="text-stone-400 block mb-1 uppercase tracking-wider font-semibold">Superficie</span>
@@ -326,16 +324,12 @@
           </div>
         </div>
 
-        <!-- Galería de Imágenes -->
         <div>
           <h4 class="text-xs uppercase tracking-widest text-stone-400 font-semibold mb-4">Galería del Proyecto</h4>
-          <div id="modalGallery" class="modal-gallery space-y-4">
-            <!-- Las imágenes se cargan dinámicamente aquí -->
-          </div>
+          <div id="modalGallery" class="modal-gallery space-y-4"></div>
         </div>
       </div>
 
-      <!-- Modal Footer -->
       <div class="p-6 border-t border-stone-200 bg-stone-50 flex justify-end sticky bottom-0">
         <a id="modalCta" href="#" target="_blank" class="w-full sm:w-auto px-6 py-3 btn-accent text-white text-xs font-bold uppercase tracking-wider rounded-full transition text-center">
           Consultar por WhatsApp sobre este proyecto
@@ -346,15 +340,7 @@
 
   <!-- JAVASCRIPT -->
   <script>
-    const generateImageArray = (folderName, count = 15) => {
-      const images = [];
-      for (let i = 1; i <= count; i++) {
-        const num = i < 10 ? `0${i}` : `${i}`;
-        images.push(`images/${folderName}/${num}.jpg`);
-      }
-      return images;
-    };
-
+    // "folders" = nombres de carpeta posibles dentro de /images (el primero que exista se usa).
     const projectData = {
       project1: {
         title: "CS 85",
@@ -362,7 +348,7 @@
         surface: "Consultar superficie",
         location: "Buenos Aires",
         desc: "Desarrollo volumétrico enfocado en la pureza de líneas y la optimización de la luz natural. El proyecto resuelve la planta en torno a patios internos que conectan visualmente las áreas sociales con el exterior.",
-        folder: "cs-85"
+        folders: ["cs-85", "cs85", "cs"]
       },
       project2: {
         title: "Chacras de la Reserva",
@@ -370,7 +356,7 @@
         surface: "120 m² cubiertos · 50 m² semicubiertos",
         location: "Buenos Aires",
         desc: "Vivienda unifamiliar planteada en una sola planta con una fuerte integración al entorno natural. El diseño prioriza espacios amplios, visuales limpias hacia el paisaje y galerías exteriores que extienden el área social.",
-        folder: "chacras-de-la-reserva-156"
+        folders: ["chacras-de-la-reserva-156", "chacras-de-la-reserva", "chacras"]
       },
       project3: {
         title: "Bali Ecoislandia",
@@ -378,23 +364,23 @@
         surface: "Consultar superficie",
         location: "Escobar",
         desc: "Anteproyecto residencial con criterios bioclimáticos e integración paisajística en Escobar. Uso de envolventes eficientes y ventilaciones cruzadas controladas.",
-        folder: "bali-ecoislandia"
+        folders: ["bali-ecoislandia", "bali"]
       },
       project4: {
         title: "Lujan L4",
-        meta: "Luján · Anteproyecto",
-        surface: "Consultar superficie",
+        meta: "Luján · Proyecto",
+        surface: "120 m² cubiertos · 60 m² semicubiertos",
         location: "Luján",
-        desc: "Diseño conceptual y legajo preliminar para vivienda moderna. Estructura sintética y volúmenes puros en relación directa con el entorno.",
-        folder: "lujan-l4"
+        desc: "Vivienda moderna de una sola planta. Estructura sintética y volúmenes puros en relación directa con el entorno.",
+        folders: ["lujan-l4", "lujan"]
       },
       project5: {
-        title: "Barrio Alameda Lote 244",
-        meta: "Buenos Aires · Reforma",
-        surface: "Consultar superficie",
+        title: "Barrio Alameda",
+        meta: "Buenos Aires · Proyecto",
+        surface: "200 m² cubiertos · 100 m² semicubiertos",
         location: "Buenos Aires",
-        desc: "Estudio integral de fachadas, reestructuración espacial y diseño interior para lote en barrio cerrado.",
-        folder: "barrio-alameda-244"
+        desc: "Proyecto residencial en barrio cerrado con estudio integral de fachadas, organización espacial y diseño interior.",
+        folders: ["barrio-alameda-244", "barrio-alameda", "alameda"]
       },
       project6: {
         title: "Barrio Cazal",
@@ -402,13 +388,44 @@
         surface: "200 m² cubiertos · 35 m² semicubiertos",
         location: "Buenos Aires - Escobar",
         desc: "Desarrollo y visualización espacial de vivienda contemporánea en entorno natural de Escobar. Énfasis en la espacialidad y materialidad.",
-        folder: "cazal-235"
+        folders: ["cazal-235", "cazal"]
       }
     };
 
+    const EXTS = ["jpg", "JPG", "jpeg", "JPEG", "png", "webp"];
+    const pad = (n) => (n < 10 ? `0${n}` : `${n}`);
+
+    const tryLoad = (src) => new Promise((resolve) => {
+      const im = new Image();
+      im.onload = () => resolve(true);
+      im.onerror = () => resolve(false);
+      im.src = src;
+    });
+
+    // Encuentra qué carpeta y extensión funcionan realmente para cada proyecto.
+    const resolved = {};
+    const resolveProject = (id) => {
+      if (resolved[id]) return resolved[id];
+      resolved[id] = (async () => {
+        for (const folder of projectData[id].folders) {
+          for (const ext of EXTS) {
+            if (await tryLoad(`images/${folder}/01.${ext}`)) return { folder, ext };
+          }
+        }
+        return null;
+      })();
+      return resolved[id];
+    };
+
+    // Portadas
+    document.querySelectorAll('img[data-cover]').forEach(async (img) => {
+      const found = await resolveProject(img.dataset.cover);
+      if (found) img.src = `images/${found.folder}/01.${found.ext}`;
+    });
+
     const modal = document.getElementById('projectModal');
 
-    const openProjectModal = (id) => {
+    const openProjectModal = async (id) => {
       const data = projectData[id];
       if (!data) return;
 
@@ -421,22 +438,22 @@
       const gallery = document.getElementById('modalGallery');
       gallery.innerHTML = '';
 
-      generateImageArray(data.folder, 15).forEach(imgSrc => {
-        const img = document.createElement('img');
-        img.src = imgSrc;
-        img.alt = data.title;
-        img.loading = 'lazy';
-        img.onerror = function() {
-          this.style.display = 'none';
-        };
-        gallery.appendChild(img);
-      });
-
       const whatsappText = encodeURIComponent(`Hola! Me interesa conversar sobre un proyecto similar a ${data.title}.`);
       document.getElementById('modalCta').href = `https://wa.me/5491164675558?text=${whatsappText}`;
 
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
+
+      const found = await resolveProject(id);
+      if (!found) return;
+      for (let i = 1; i <= 15; i++) {
+        const img = document.createElement('img');
+        img.src = `images/${found.folder}/${pad(i)}.${found.ext}`;
+        img.alt = data.title;
+        img.loading = 'lazy';
+        img.onerror = function () { this.style.display = 'none'; };
+        gallery.appendChild(img);
+      }
     };
 
     const closeProjectModal = () => {
@@ -445,22 +462,16 @@
     };
 
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeProjectModal();
-      }
+      if (e.target === modal) closeProjectModal();
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeProjectModal();
-      }
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeProjectModal();
     });
 
     const menuBtn = document.getElementById('menuBtn');
     const mobileNav = document.getElementById('mobileNav');
-    menuBtn.addEventListener('click', () => {
-      mobileNav.classList.toggle('hidden');
-    });
+    menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
     document.querySelectorAll('.mobile-link').forEach(link => {
       link.addEventListener('click', () => mobileNav.classList.add('hidden'));
     });
