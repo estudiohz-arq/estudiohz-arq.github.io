@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reformas y ampliaciones de casas · Estudio HZ</title>
+  <meta name="description" content="Reformá tu casa viendo cómo va a quedar antes de obrar. Relevamiento, proyecto y render 3D previo. Estudio HZ, Buenos Aires.">
+  <link rel="canonical" href="https://estudiohz-arq.github.io/reformas.html">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f6f4ef">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://estudiohz-arq.github.io/reformas.html">
+  <meta property="og:title" content="Reformas y ampliaciones de casas · Estudio HZ">
+  <meta property="og:description" content="Reformá tu casa viendo cómo va a quedar antes de obrar. Relevamiento, proyecto y render 3D previo. Estudio HZ, Buenos Aires.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Seguimiento de anuncios (se configura en tracking.js) -->
+  <script src="tracking.js"></script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Fraunces"', 'serif'],
+          },
+          colors: {
+            sand: {
+              50: '#fbf9f6',
+              100: '#f4efe6',
+              200: '#e5d9c5',
+              800: '#5a5347',
+              900: '#38332b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg-color: #f6f4ef;
+      --card-bg: #ffffff;
+      --text-main: #211f1a;
+      --text-muted: #6b6559;
+      --accent: #9a4b2e;
+      --accent-soft: #b8623f;
+      --border-color: #e3ddcd;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    h1, h2, h3, .font-serif {
+      font-family: 'Fraunces', serif;
+    }
+    ::selection {
+      background: #e5d9c5;
+    }
+    a, button {
+      transition: all .25s ease;
+    }
+    .modal {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .modal.active {
+      display: flex;
+      opacity: 1;
+    }
+    .modal-gallery img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+    .project-card .img-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card .img-wrap img {
+      transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+      filter: grayscale(15%);
+    }
+    .project-card:hover .img-wrap img {
+      transform: scale(1.06);
+      filter: grayscale(0%);
+    }
+    .project-card .img-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(33,31,26,.55), rgba(33,31,26,0) 45%);
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+    .project-card:hover .img-wrap::after {
+      opacity: 1;
+    }
+    .project-card .hover-tag {
+      position: absolute;
+      bottom: 14px;
+      left: 16px;
+      right: 16px;
+      z-index: 2;
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: all .35s ease;
+    }
+    .project-card:hover .hover-tag {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .btn-primary {
+      background: var(--text-main);
+    }
+    .btn-primary:hover {
+      background: var(--accent);
+    }
+    .btn-accent {
+      background: var(--accent);
+    }
+    .btn-accent:hover {
+      background: var(--accent-soft);
+    }
+    details > summary {
+      list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, .project-card .img-wrap img {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Estudio HZ",
+    "description": "Estudio de arquitectura y visualización: anteproyectos, proyectos, reformas y dirección de obra.",
+    "url": "https://estudiohz-arq.github.io/",
+    "telephone": "+5491164675558",
+    "email": "hzstudio.arq@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Buenos Aires", "addressCountry": "AR" },
+    "areaServed": ["Escobar", "Luján", "Tres de Febrero", "Zona Norte", "Zona Oeste", "Ciudad Autónoma de Buenos Aires"],
+    "sameAs": ["https://www.instagram.com/estudiohz_/"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Trabajan en barrios cerrados?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Tenemos proyectos en barrios cerrados de Escobar y alrededores, adecuados al reglamento de cada barrio." } },
+      { "@type": "Question", "name": "¿Hacen la dirección de obra?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, es opcional. Podés contratar solo el proyecto o sumar el seguimiento técnico de la obra." } },
+      { "@type": "Question", "name": "¿Puedo ver cómo va a quedar antes de construir?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Trabajamos con visualización 3D propia, así que ves tu casa o reforma en imágenes realistas antes de tomar decisiones." } }
+    ]
+  }
+  </script>
+</head>
+<body class="antialiased selection:bg-stone-200">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#f6f4ef]/85 backdrop-blur-md border-b border-[#e3ddcd]">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="text-xl font-semibold tracking-tight uppercase font-serif">Estudio <span style="color:var(--accent)">HZ</span></a>
+      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-stone-600">
+        <a href="#servicios" class="hover:text-stone-900 transition">Servicios</a>
+        <a href="#proyectos" class="hover:text-stone-900 transition">Proyectos</a>
+        <a href="#proceso" class="hover:text-stone-900 transition">Proceso</a>
+        <a href="#estudio" class="hover:text-stone-900 transition">El Estudio</a>
+        <a href="#faq" class="hover:text-stone-900 transition">FAQ</a>
+        <a href="#contacto" class="hover:text-stone-900 transition">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="https://wa.me/5491164675558" target="_blank" rel="noopener" data-track="header" class="hidden md:inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold uppercase tracking-wider btn-primary text-white rounded-full transition">
+          WhatsApp Directo
+        </a>
+        <button id="menuBtn" class="lg:hidden w-10 h-10 flex items-center justify-center rounded-full border border-stone-300" aria-label="Abrir menú">
+          <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAV -->
+    <div id="mobileNav" class="hidden lg:hidden border-t border-[#e3ddcd] bg-[#f6f4ef]">
+      <div class="px-6 py-6 flex flex-col gap-5 text-base font-medium">
+        <a href="#servicios" class="mobile-link">Servicios</a>
+        <a href="#proyectos" class="mobile-link">Proyectos</a>
+        <a href="#proceso" class="mobile-link">Proceso</a>
+        <a href="#estudio" class="mobile-link">El Estudio</a>
+        <a href="#faq" class="mobile-link">FAQ</a>
+        <a href="#contacto" class="mobile-link">Contacto</a>
+        <a href="https://wa.me/5491164675558" target="_blank" rel="noopener" data-track="menu-movil" class="inline-flex items-center justify-center px-5 py-3 text-xs font-semibold uppercase tracking-wider btn-primary text-white rounded-full">WhatsApp Directo</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- HERO -->
+    <section class="max-w-7xl mx-auto px-6 py-24 md:py-32">
+      <div class="max-w-3xl">
+        <span class="text-xs font-bold uppercase tracking-widest mb-4 block" style="color:var(--accent)">Reformas y ampliaciones</span>
+        <h1 class="text-4xl md:text-6xl font-normal tracking-tight leading-[1.08] mb-8">
+          Reformá tu casa viendo cómo va a quedar antes de obrar.
+        </h1>
+        <p class="text-lg text-stone-600 font-normal leading-relaxed mb-10 max-w-xl">
+          Relevamiento, proyecto y render 3D previo para que decidas con seguridad. Dirección de obra incluida si la necesitás.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="https://wa.me/5491164675558?text=Hola!%20Quiero%20reformar%20mi%20casa%20y%20me%20gustar%C3%ADa%20una%20consulta%20inicial." target="_blank" rel="noopener" data-track="hero" class="px-8 py-4 btn-accent text-white text-xs font-bold uppercase tracking-wider rounded-full transition">
+            Consulta inicial sin compromiso
+          </a>
+          <a href="#proyectos" class="px-8 py-4 border border-stone-300 text-stone-900 text-xs font-bold uppercase tracking-wider rounded-full hover:border-stone-900 transition">
+            Ver Proyectos
+          </a>
+        </div>
+        <p class="mt-8 text-[11px] uppercase tracking-widest text-stone-500">
+          Arquitecto FADU UBA · Maestro Mayor de Obras · Zona Norte, Zona Oeste y CABA
+        </p>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e3ddcd]">
+      <div class="mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest mb-2 block" style="color:var(--accent)">Servicios</span>
+        <h2 class="text-3xl font-normal tracking-tight">Cómo podemos ayudarte</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="bg-white border border-[#e3ddcd] rounded-xl p-8 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--accent)">01</span>
+          <h3 class="text-xl font-medium tracking-tight mb-3">Anteproyecto</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-5">Para saber qué se puede construir en tu lote y cómo va a verse, antes de comprometer la inversión.</p>
+          <ul class="text-xs text-stone-500 space-y-1.5 mb-6 flex-1">
+            <li>· Plantas, cortes y vistas</li>
+            <li>· Imágenes 3D realistas</li>
+            <li>· Análisis de normativa del barrio o municipio</li>
+          </ul>
+          <a href="https://wa.me/5491164675558?text=Hola!%20Quiero%20consultar%20por%20un%20anteproyecto." target="_blank" rel="noopener" data-track="servicio-anteproyecto" class="text-xs font-bold uppercase tracking-wider" style="color:var(--accent)">Consultar →</a>
+        </div>
+
+        <div class="bg-white border border-[#e3ddcd] rounded-xl p-8 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--accent)">02</span>
+          <h3 class="text-xl font-medium tracking-tight mb-3">Proyecto y documentación</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-5">La documentación técnica completa para presentar, cotizar y construir sin improvisar en obra.</p>
+          <ul class="text-xs text-stone-500 space-y-1.5 mb-6 flex-1">
+            <li>· Planos de proyecto y ejecutivos</li>
+            <li>· Documentación para trámite municipal</li>
+            <li>· Detalles constructivos y memoria</li>
+          </ul>
+          <a href="https://wa.me/5491164675558?text=Hola!%20Quiero%20consultar%20por%20proyecto%20y%20documentaci%C3%B3n." target="_blank" rel="noopener" data-track="servicio-proyecto" class="text-xs font-bold uppercase tracking-wider" style="color:var(--accent)">Consultar →</a>
+        </div>
+
+        <div class="bg-white border border-[#e3ddcd] rounded-xl p-8 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--accent)">03</span>
+          <h3 class="text-xl font-medium tracking-tight mb-3">Reformas y ampliaciones</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-5">Transformamos tu casa con un proyecto integral y un render previo, para que veas el resultado antes de empezar.</p>
+          <ul class="text-xs text-stone-500 space-y-1.5 mb-6 flex-1">
+            <li>· Relevamiento y diagnóstico</li>
+            <li>· Proyecto con render del "después"</li>
+            <li>· Coordinación de rubros</li>
+          </ul>
+          <a href="https://wa.me/5491164675558?text=Hola!%20Quiero%20consultar%20por%20una%20reforma." target="_blank" rel="noopener" data-track="servicio-reforma" class="text-xs font-bold uppercase tracking-wider" style="color:var(--accent)">Consultar →</a>
+        </div>
+
+        <div class="bg-white border border-[#e3ddcd] rounded-xl p-8 flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-widest mb-3" style="color:var(--accent)">04</span>
+          <h3 class="text-xl font-medium tracking-tight mb-3">Dirección de obra</h3>
+          <p class="text-stone-600 text-sm leading-relaxed mb-5">Seguimiento técnico para que lo proyectado se construya como corresponde, en tiempo y costo.</p>
+          <ul class="text-xs text-stone-500 space-y-1.5 mb-6 flex-1">
+            <li>· Visitas y control de calidad</li>
+            <li>· Revisión de presupuestos y certificados</li>
+            <li>· Resolución de imprevistos en obra</li>
+          </ul>
+          <a href="https://wa.me/5491164675558?text=Hola!%20Quiero%20consultar%20por%20direcci%C3%B3n%20de%20obra." target="_blank" rel="noopener" data-track="servicio-obra" class="text-xs font-bold uppercase tracking-wider" style="color:var(--accent)">Consultar →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e3ddcd]">
+      <div class="flex justify-between items-end mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest mb-2 block" style="color:var(--accent)">Portafolio</span>
+          <h2 class="text-3xl font-normal tracking-tight">Obras y Trabajos</h2>
+        </div>
+        <span class="text-xs text-stone-500 uppercase tracking-widest hidden md:block">Selección 2024 - 2026</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div onclick="openProjectModal('project1')" class="project-card group cursor-pointer">
+          <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
+            <img data-cover="project1" alt="CS 85" class="w-full h-full object-cover rounded-xl">
+            <span class="hover-tag">Ver galería del proyecto →</span>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Buenos Aires · Proyecto</span>
+          <h3 class="text-xl font-medium tracking-tight group-hover:text-[color:var(--accent)] transition">CS 85</h3>
+        </div>
+
+        <!-- Project 2 -->
+        <div onclick="openProjectModal('project2')" class="project-card group cursor-pointer">
+          <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
+            <img data-cover="project2" alt="Chacras de la Reserva" class="w-full h-full object-cover rounded-xl">
+            <span class="hover-tag">Ver galería del proyecto →</span>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Buenos Aires · Proyecto</span>
+          <h3 class="text-xl font-medium tracking-tight group-hover:text-[color:var(--accent)] transition">Chacras de la Reserva</h3>
+        </div>
+
+        <!-- Project 3 -->
+        <div onclick="openProjectModal('project3')" class="project-card group cursor-pointer">
+          <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
+            <img data-cover="project3" alt="Bali Ecoislandia" class="w-full h-full object-cover rounded-xl">
+            <span class="hover-tag">Ver galería del proyecto →</span>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Escobar · Anteproyecto</span>
+          <h3 class="text-xl font-medium tracking-tight group-hover:text-[color:var(--accent)] transition">Bali Ecoislandia</h3>
+        </div>
+
+        <!-- Project 4 -->
+        <div onclick="openProjectModal('project4')" class="project-card group cursor-pointer">
+          <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
+            <img data-cover="project4" alt="Lujan L4" class="w-full h-full object-cover rounded-xl">
+            <span class="hover-tag">Ver galería del proyecto →</span>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Luján · Proyecto</span>
+          <h3 class="text-xl font-medium tracking-tight group-hover:text-[color:var(--accent)] transition">Lujan L4</h3>
+        </div>
+
+        <!-- Project 5 -->
+        <div onclick="openProjectModal('project5')" class="project-card group cursor-pointer">
+          <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
+            <img data-cover="project5" alt="Barrio Alameda" class="w-full h-full object-cover rounded-xl">
+            <span class="hover-tag">Ver galería del proyecto →</span>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Buenos Aires · Proyecto</span>
+          <h3 class="text-xl font-medium tracking-tight group-hover:text-[color:var(--accent)] transition">Barrio Alameda</h3>
+        </div>
+
+        <!-- Project 6 -->
+        <div onclick="openProjectModal('project6')" class="project-card group cursor-pointer">
+          <div class="img-wrap aspect-[4/3] bg-stone-200 mb-4 rounded-xl">
+            <img data-cover="project6" alt="Barrio Cazal" class="w-full h-full object-cover rounded-xl">
+            <span class="hover-tag">Ver galería del proyecto →</span>
+          </div>
+          <span class="text-[11px] uppercase tracking-wider text-stone-500 block mb-1">Buenos Aires - Escobar · Proyecto</span>
+          <h3 class="text-xl font-medium tracking-tight group-hover:text-[color:var(--accent)] transition">Barrio Cazal</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section id="proceso" class="max-w-7xl mx-auto px-6 py-20 border-t border-[#e3ddcd]">
+      <div class="mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest mb-2 block" style="color:var(--accent)">Cómo trabajamos</span>
+        <h2 class="text-3xl font-normal tracking-tight">De la primera charla a la obra, en 4 pasos</h2>
+      </div>
+
+      <ol class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <li>
+          <span class="font-serif text-4xl" style="color:var(--accent)">1</span>
+          <h3 class="text-lg font-medium mt-3 mb-2">Consulta inicial</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">Charlamos sobre tu terreno o tu casa, tus necesidades y tu presupuesto. Te damos una primera orientación realista.</p>
+        </li>
+        <li>
+          <span class="font-serif text-4xl" style="color:var(--accent)">2</span>
+          <h3 class="text-lg font-medium mt-3 mb-2">Anteproyecto</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">Desarrollamos la propuesta con plantas e imágenes 3D. Ves cómo va a quedar y ajustamos juntos.</p>
+        </li>
+        <li>
+          <span class="font-serif text-4xl" style="color:var(--accent)">3</span>
+          <h3 class="text-lg font-medium mt-3 mb-2">Proyecto y documentación</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">Planos y documentación técnica para trámite, cotización y construcción.</p>
+        </li>
+        <li>
+          <span class="font-serif text-4xl" style="color:var(--accent)">4</span>
+          <h3 class="text-lg font-medium mt-3 mb-2">Obra</h3>
+          <p class="text-sm text-stone-600 leading-relaxed">Acompañamos la ejecución con dirección de obra para que se construya lo proyectado.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ESTUDIO -->
+    <section id="estudio" class="max-w-7xl mx-auto px-6 py-24 border-t border-[#e3ddcd]">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest mb-4 block" style="color:var(--accent)">Filosofía</span>
+          <h2 class="text-3xl font-normal tracking-tight mb-6">Arquitectura pensada desde la materialidad y la escala humana.</h2>
+          <p class="text-stone-600 leading-relaxed mb-4">
+            En Estudio HZ concebimos cada encargo como una respuesta única a un contexto específico. Combinamos rigor técnico con una estética depurada, priorizando la entrada de luz natural, las visuales limpias y el confort térmico.
+          </p>
+          <p class="text-stone-600 leading-relaxed">
+            Acompañamos todo el proceso: desde las primeras ideas conceptuales y anteproyectos hasta el desarrollo de la documentación técnica y dirección de obra.
+          </p>
+          <ul class="mt-8 space-y-2 text-sm text-stone-700">
+            <li>· Arquitecto graduado en FADU UBA</li>
+            <li>· Maestro Mayor de Obras: entendemos la obra desde el proyecto</li>
+            <li>· Visualización 3D propia: ves tu proyecto antes de construirlo</li>
+          </ul>
+        </div>
+        <div class="bg-stone-200 aspect-[4/3] rounded-xl overflow-hidden">
+          <img data-cover="project2" alt="Vivienda proyectada por Estudio HZ" class="w-full h-full object-cover grayscale">
+        </div>
+      </div>
+    </section>
+
+    <!-- ZONAS -->
+    <section class="max-w-7xl mx-auto px-6 py-16 border-t border-[#e3ddcd]">
+      <span class="text-xs font-bold uppercase tracking-widest mb-2 block" style="color:var(--accent)">Dónde trabajamos</span>
+      <p class="text-stone-600 max-w-2xl">
+        Proyectos y reformas en Escobar, Luján, Zona Norte, Zona Oeste y Ciudad de Buenos Aires. Si tu obra está en otra zona, consultanos.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="max-w-3xl mx-auto px-6 py-20 border-t border-[#e3ddcd]">
+      <div class="mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest mb-2 block" style="color:var(--accent)">Preguntas frecuentes</span>
+        <h2 class="text-3xl font-normal tracking-tight">Lo que suelen preguntarnos</h2>
+      </div>
+
+      <div class="divide-y divide-[#e3ddcd] border-y border-[#e3ddcd]">
+        <details class="py-5 group">
+          <summary class="cursor-pointer font-medium flex justify-between items-center gap-4">¿Cuánto cuesta un proyecto de arquitectura? <span class="text-stone-400 text-xl group-open:rotate-45 transition">+</span></summary>
+          <p class="mt-3 text-sm text-stone-600 leading-relaxed">Depende de la superficie, la complejidad y el alcance que necesites (anteproyecto, proyecto completo, dirección de obra). En la consulta inicial te pasamos una propuesta de honorarios clara y por etapas.</p>
+        </details>
+        <details class="py-5 group">
+          <summary class="cursor-pointer font-medium flex justify-between items-center gap-4">¿Cuánto tarda un anteproyecto y un proyecto completo? <span class="text-stone-400 text-xl group-open:rotate-45 transition">+</span></summary>
+          <p class="mt-3 text-sm text-stone-600 leading-relaxed">Depende de la superficie y de qué tan ágiles seamos juntos en las decisiones. En la consulta te damos plazos estimados para cada etapa.</p>
+        </details>
+        <details class="py-5 group">
+          <summary class="cursor-pointer font-medium flex justify-between items-center gap-4">¿Trabajan en barrios cerrados? <span class="text-stone-400 text-xl group-open:rotate-45 transition">+</span></summary>
+          <p class="mt-3 text-sm text-stone-600 leading-relaxed">Sí. Tenemos proyectos en barrios cerrados de Escobar y alrededores, adecuados al reglamento de cada barrio.</p>
+        </details>
+        <details class="py-5 group">
+          <summary class="cursor-pointer font-medium flex justify-between items-center gap-4">¿Qué necesito para empezar? <span class="text-stone-400 text-xl group-open:rotate-45 transition">+</span></summary>
+          <p class="mt-3 text-sm text-stone-600 leading-relaxed">Con la ubicación del terreno o la casa, una idea de lo que necesitás y tu rango de inversión alcanza para la primera consulta. Si ya tenés planos o escritura, mejor.</p>
+        </details>
+        <details class="py-5 group">
+          <summary class="cursor-pointer font-medium flex justify-between items-center gap-4">¿Hacen la dirección de obra? <span class="text-stone-400 text-xl group-open:rotate-45 transition">+</span></summary>
+          <p class="mt-3 text-sm text-stone-600 leading-relaxed">Sí, es opcional. Podés contratar solo el proyecto o sumar el seguimiento técnico de la obra.</p>
+        </details>
+        <details class="py-5 group">
+          <summary class="cursor-pointer font-medium flex justify-between items-center gap-4">¿Puedo ver cómo va a quedar antes de construir? <span class="text-stone-400 text-xl group-open:rotate-45 transition">+</span></summary>
+          <p class="mt-3 text-sm text-stone-600 leading-relaxed">Sí. Trabajamos con visualización 3D propia, así que ves tu casa o reforma en imágenes realistas antes de tomar decisiones.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="max-w-7xl mx-auto px-6 py-24 border-t border-[#e3ddcd]">
+      <div class="max-w-xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="text-xs font-bold uppercase tracking-widest mb-4 block" style="color:var(--accent)">Hablemos</span>
+          <h2 class="text-4xl font-normal tracking-tight mb-4">Contanos tu proyecto</h2>
+          <p class="text-stone-600">Respondé estas preguntas y te escribimos por WhatsApp con una primera orientación. Sin compromiso.</p>
+        </div>
+
+        <form id="leadForm" class="bg-white border border-[#e3ddcd] rounded-xl p-8 space-y-5">
+          <div>
+            <label class="text-xs font-semibold uppercase tracking-wider text-stone-500 block mb-2" for="f-nombre">Tu nombre</label>
+            <input id="f-nombre" name="nombre" required class="w-full border border-stone-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-stone-900">
+          </div>
+          <div>
+            <label class="text-xs font-semibold uppercase tracking-wider text-stone-500 block mb-2" for="f-tipo">¿Qué necesitás?</label>
+            <select id="f-tipo" name="tipo" required class="w-full border border-stone-300 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:border-stone-900">
+              <option value="" disabled selected>Elegí una opción</option>
+              <option data-key="proyecto" value="Proyecto para un lote">Proyecto para un lote</option>
+              <option data-key="reforma" value="Reforma o ampliación">Reforma o ampliación</option>
+              <option data-key="anteproyecto" value="Anteproyecto con imágenes 3D">Anteproyecto con imágenes 3D</option>
+              <option data-key="obra" value="Dirección de obra">Dirección de obra</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-xs font-semibold uppercase tracking-wider text-stone-500 block mb-2" for="f-ubic">Ubicación (barrio o localidad)</label>
+            <input id="f-ubic" name="ubicacion" required placeholder="Ej: Escobar, Ramos Mejía, Palermo…" class="w-full border border-stone-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-stone-900">
+          </div>
+          <div>
+            <label class="text-xs font-semibold uppercase tracking-wider text-stone-500 block mb-2" for="f-m2">Superficie aproximada (m²)</label>
+            <input id="f-m2" name="m2" placeholder="Ej: 180" class="w-full border border-stone-300 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-stone-900">
+          </div>
+          <div>
+            <label class="text-xs font-semibold uppercase tracking-wider text-stone-500 block mb-2" for="f-plazo">¿Cuándo querés empezar?</label>
+            <select id="f-plazo" name="plazo" required class="w-full border border-stone-300 rounded-lg px-4 py-3 text-sm bg-white focus:outline-none focus:border-stone-900">
+              <option value="" disabled selected>Elegí una opción</option>
+              <option>Lo antes posible</option>
+              <option>En 3 a 6 meses</option>
+              <option>Estoy evaluando opciones</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full px-8 py-4 btn-accent text-white text-xs font-bold uppercase tracking-wider rounded-full transition">
+            Enviar por WhatsApp
+          </button>
+          <p class="text-[11px] text-stone-400 text-center">Se abre WhatsApp con tus datos cargados. No guardamos información en este sitio.</p>
+        </form>
+
+        <p class="mt-8 text-center text-sm text-stone-500">
+          O escribinos directo:
+          <a href="mailto:hzstudio.arq@gmail.com" class="underline">hzstudio.arq@gmail.com</a> ·
+          <a href="https://www.instagram.com/estudiohz_/" target="_blank" rel="noopener" class="underline">@estudiohz_</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-[#e3ddcd] py-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-xs text-stone-500">
+      <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6">
+        <p>© 2026 Estudio HZ. Todos los derechos reservados.</p>
+        <a href="privacidad.html" class="underline hover:text-stone-900">Política de privacidad</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a id="linkWhatsapp" href="https://wa.me/5491164675558" target="_blank" rel="noopener" data-track="footer" aria-label="WhatsApp" class="social w-11 h-11 rounded-full border border-stone-300 flex items-center justify-center text-stone-700 hover:bg-[color:var(--accent)] hover:border-[color:var(--accent)] hover:text-white">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a id="linkInstagram" href="#" target="_blank" rel="noopener" aria-label="Instagram" class="social w-11 h-11 rounded-full border border-stone-300 flex items-center justify-center text-stone-700 hover:bg-[color:var(--accent)] hover:border-[color:var(--accent)] hover:text-white">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a id="linkGmail" href="#" aria-label="Gmail" class="social w-11 h-11 rounded-full border border-stone-300 flex items-center justify-center text-stone-700 hover:bg-[color:var(--accent)] hover:border-[color:var(--accent)] hover:text-white">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+      <p>Buenos Aires, Argentina</p>
+    </div>
+  </footer>
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/5491164675558?text=Hola!%20Vi%20su%20web%20y%20quiero%20consultar." target="_blank" rel="noopener" data-track="flotante"
+     aria-label="Escribinos por WhatsApp"
+     class="fixed bottom-5 right-5 z-40 btn-accent text-white rounded-full shadow-lg flex items-center gap-2 pl-4 pr-5 py-3 text-xs font-bold uppercase tracking-wider">
+    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Escribinos
+  </a>
+
+  <!-- MODAL -->
+  <div id="projectModal" class="modal fixed inset-0 z-50 bg-black/70 backdrop-blur-sm items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-white w-full max-w-3xl rounded-xl overflow-hidden shadow-2xl relative my-8 max-h-[90vh] flex flex-col">
+      <div class="p-6 border-b border-stone-200 flex justify-between items-center bg-white sticky top-0 z-10">
+        <div>
+          <span id="modalMeta" class="text-[11px] uppercase tracking-wider font-semibold block mb-1" style="color:var(--accent)"></span>
+          <h3 id="modalTitle" class="text-2xl font-normal tracking-tight text-stone-900 font-serif"></h3>
+        </div>
+        <button onclick="closeProjectModal()" class="w-10 h-10 rounded-full bg-stone-100 flex items-center justify-center hover:bg-stone-200 transition text-stone-700">
+          ✕
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto flex-1 space-y-6">
+        <p id="modalDesc" class="text-stone-600 leading-relaxed"></p>
+
+        <div class="bg-stone-50 p-4 rounded-lg border border-stone-200 grid grid-cols-2 gap-4 text-xs">
+          <div>
+            <span class="text-stone-400 block mb-1 uppercase tracking-wider font-semibold">Superficie</span>
+            <span id="specService" class="font-medium text-stone-800">Proyecto</span>
+          </div>
+          <div>
+            <span class="text-stone-400 block mb-1 uppercase tracking-wider font-semibold">Ubicación</span>
+            <span id="specLocation" class="font-medium text-stone-800">Buenos Aires</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs uppercase tracking-widest text-stone-400 font-semibold mb-4">Galería del Proyecto</h4>
+          <div id="modalGallery" class="modal-gallery space-y-4"></div>
+        </div>
+      </div>
+
+      <div class="p-6 border-t border-stone-200 bg-stone-50 flex justify-end sticky bottom-0">
+        <a id="modalCta" href="#" target="_blank" rel="noopener" data-track="modal-proyecto" class="w-full sm:w-auto px-6 py-3 btn-accent text-white text-xs font-bold uppercase tracking-wider rounded-full transition text-center">
+          Consultar por WhatsApp sobre este proyecto
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // ====== COMPLETAR TUS DATOS ======
+    const INSTAGRAM_URL = "https://www.instagram.com/estudiohz_/";
+    const EMAIL = "hzstudio.arq@gmail.com";
+    // =================================
+
+    document.getElementById('linkInstagram').href = INSTAGRAM_URL;
+    const gmailLink = document.getElementById('linkGmail');
+    gmailLink.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(EMAIL)}&su=${encodeURIComponent('Consulta desde la web')}`;
+    gmailLink.target = '_blank';
+    gmailLink.rel = 'noopener';
+
+    const range = (n) => Array.from({ length: n }, (_, k) => (k + 1 < 10 ? `0${k + 1}` : `${k + 1}`));
+
+    // folders: nombres posibles de carpeta dentro de /images
+    // files: nombres de las fotos (sin extensión). Si se omite, prueba 01 a 15.
+    const projectData = {
+      project1: {
+        title: "CS 85", meta: "Buenos Aires · Proyecto",
+        surface: "Consultar superficie", location: "Buenos Aires",
+        desc: "Desarrollo volumétrico enfocado en la pureza de líneas y la optimización de la luz natural. El proyecto resuelve la planta en torno a patios internos que conectan visualmente las áreas sociales con el exterior.",
+        folders: ["cs-85", "cs85"], files: range(15)
+      },
+      project2: {
+        title: "Chacras de la Reserva", meta: "Buenos Aires · Proyecto",
+        surface: "120 m² cubiertos · 50 m² semicubiertos", location: "Buenos Aires",
+        desc: "Vivienda unifamiliar planteada en una sola planta con una fuerte integración al entorno natural. El diseño prioriza espacios amplios, visuales limpias hacia el paisaje y galerías exteriores que extienden el área social.",
+        folders: ["chacras-de-la-reserva-156", "chacras-de-la-reserva"], files: ["01", "02", "03", "04"]
+      },
+      project3: {
+        title: "Bali Ecoislandia", meta: "Escobar · Anteproyecto",
+        surface: "Consultar superficie", location: "Escobar",
+        desc: "Anteproyecto residencial con criterios bioclimáticos e integración paisajística en Escobar. Uso de envolventes eficientes y ventilaciones cruzadas controladas.",
+        folders: ["bali-ecoislandia"], files: ["01", "02", "03", "04"]
+      },
+      project4: {
+        title: "Lujan L4", meta: "Luján · Proyecto",
+        surface: "120 m² cubiertos · 60 m² semicubiertos", location: "Luján",
+        desc: "Vivienda moderna de una sola planta. Estructura sintética y volúmenes puros en relación directa con el entorno.",
+        folders: ["lujan-l4", "lujan"], files: range(15)
+      },
+      project5: {
+        title: "Barrio Alameda", meta: "Buenos Aires · Proyecto",
+        surface: "200 m² cubiertos · 100 m² semicubiertos", location: "Buenos Aires",
+        desc: "Proyecto residencial en barrio cerrado con estudio integral de fachadas, organización espacial y diseño interior.",
+        folders: ["barrio-alameda-244", "barrio-alameda"], files: range(15)
+      },
+      project6: {
+        title: "Barrio Cazal", meta: "Buenos Aires - Escobar · Proyecto",
+        surface: "200 m² cubiertos · 35 m² semicubiertos", location: "Buenos Aires - Escobar",
+        desc: "Desarrollo y visualización espacial de vivienda contemporánea en entorno natural de Escobar. Énfasis en la espacialidad y materialidad.",
+        folders: ["cazal-235", "cazal"], files: ["01", "07", "09"]
+      }
+    };
+
+    // Extensiones posibles (incluye dobles como 04.jpg.jpg)
+    const EXTS = ["jpg", "JPG", "jpeg", "JPEG", "png", "webp", "jpg.jpg", "JPG.JPG", "jpeg.jpeg", "png.png"];
+
+    const tryLoad = (src) => new Promise((resolve) => {
+      const im = new Image();
+      im.onload = () => resolve(src);
+      im.onerror = () => resolve(null);
+      im.src = src;
+    });
+
+    // Para una foto, devuelve la primera URL que exista (probando extensiones)
+    const findImage = async (folder, name) => {
+      const results = await Promise.all(EXTS.map((e) => tryLoad(`images/${folder}/${name}.${e}`)));
+      return results.find(Boolean) || null;
+    };
+
+    // Devuelve la lista de URLs válidas de un proyecto (cacheada)
+    const cache = {};
+    const getImages = (id) => {
+      if (cache[id]) return cache[id];
+      cache[id] = (async () => {
+        const { folders, files } = projectData[id];
+        for (const folder of folders) {
+          const first = await findImage(folder, files[0]);
+          if (!first) continue;
+          const rest = await Promise.all(files.slice(1).map((n) => findImage(folder, n)));
+          return [first, ...rest.filter(Boolean)];
+        }
+        return [];
+      })();
+      return cache[id];
+    };
+
+    // Portadas
+    document.querySelectorAll('img[data-cover]').forEach(async (img) => {
+      const list = await getImages(img.dataset.cover);
+      if (list.length) {
+        img.src = list[0];
+      } else {
+        img.style.display = 'none';
+        const wrap = img.parentElement;
+        wrap.classList.add('flex', 'items-center', 'justify-center');
+        const ph = document.createElement('span');
+        ph.className = 'text-xs uppercase tracking-widest text-stone-400';
+        ph.textContent = 'Próximamente';
+        wrap.prepend(ph);
+      }
+    });
+
+    const modal = document.getElementById('projectModal');
+
+    const openProjectModal = async (id) => {
+      const data = projectData[id];
+      if (!data) return;
+
+      document.getElementById('modalTitle').innerText = data.title;
+      document.getElementById('modalMeta').innerText = data.meta;
+      document.getElementById('modalDesc').innerText = data.desc;
+      document.getElementById('specService').innerText = data.surface;
+      document.getElementById('specLocation').innerText = data.location;
+
+      const gallery = document.getElementById('modalGallery');
+      gallery.innerHTML = '<p class="text-xs text-stone-400">Cargando imágenes…</p>';
+
+      const whatsappText = encodeURIComponent(`Hola! Me interesa conversar sobre un proyecto similar a ${data.title}.`);
+      document.getElementById('modalCta').href = `https://wa.me/5491164675558?text=${whatsappText}`;
+
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+
+      const list = await getImages(id);
+      gallery.innerHTML = '';
+      if (!list.length) {
+        gallery.innerHTML = '<p class="text-xs text-stone-400">Las imágenes de este proyecto estarán disponibles pronto.</p>';
+        return;
+      }
+      list.forEach((src) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = data.title;
+        img.loading = 'lazy';
+        gallery.appendChild(img);
+      });
+    };
+
+    const closeProjectModal = () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    };
+
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeProjectModal(); });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) closeProjectModal();
+    });
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    menuBtn.addEventListener('click', () => mobileNav.classList.toggle('hidden'));
+    document.querySelectorAll('.mobile-link').forEach((link) => {
+      link.addEventListener('click', () => mobileNav.classList.add('hidden'));
+    });
+
+    // ====== FORMULARIO: arma el mensaje y abre WhatsApp ======
+    const leadForm = document.getElementById('leadForm');
+    if (leadForm) {
+      // Preselección por URL: ?tipo=reforma | proyecto | anteproyecto | obra
+      const preset = new URLSearchParams(location.search).get('tipo') || 'reforma';
+      if (preset) {
+        const opt = Array.from(leadForm.tipo.options).find((o) => o.dataset.key === preset);
+        if (opt) leadForm.tipo.value = opt.value;
+      }
+
+      leadForm.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const d = Object.fromEntries(new FormData(leadForm));
+        const msg = [
+          `Hola! Soy ${d.nombre}.`,
+          `Necesito: ${d.tipo}`,
+          `Ubicación: ${d.ubicacion}`,
+          `Superficie aprox.: ${d.m2 ? d.m2 + ' m²' : 'a definir'}`,
+          `Plazo: ${d.plazo}`,
+          `(Consulta desde la web)`
+        ].join('\n');
+        track('Lead', 'generate_lead', { tipo: d.tipo, zona: d.ubicacion });
+        window.open(`https://wa.me/5491164675558?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+      });
+    }
+  </script>
+</body>
+</html>

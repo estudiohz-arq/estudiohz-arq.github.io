@@ -1,0 +1,50 @@
+/* ============================================================
+   ESTUDIO HZ - SEGUIMIENTO DE ANUNCIOS (Meta Pixel + Google Analytics)
+
+   ÚNICO LUGAR QUE TENÉS QUE EDITAR:
+   Cuando tengas los IDs, pegalos entre las comillas. Si los dejás
+   vacíos, la web funciona igual, simplemente no mide nada todavía.
+   ============================================================ */
+
+const META_PIXEL_ID = "";   // Ejemplo: "123456789012345"
+const GA4_ID = "";          // Ejemplo: "G-ABCD123456"
+
+/* ---------------- NO TOCAR DESDE ACÁ ---------------- */
+
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+
+(function () {
+  if (META_PIXEL_ID) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', META_PIXEL_ID);
+    fbq('track', 'PageView');
+  }
+
+  if (GA4_ID) {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', GA4_ID);
+  }
+})();
+
+// Registra un evento en Meta y en Google (si están configurados)
+function track(metaEvent, gaEvent, params) {
+  params = params || {};
+  try { if (typeof fbq === 'function') fbq('track', metaEvent, params); } catch (e) {}
+  try { if (GA4_ID) gtag('event', gaEvent, params); } catch (e) {}
+}
+
+// Mide cada clic a WhatsApp (botones, galería, botón flotante)
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
+  if (!a) return;
+  track('Contact', 'whatsapp_click', { ubicacion: a.getAttribute('data-track') || 'general' });
+});

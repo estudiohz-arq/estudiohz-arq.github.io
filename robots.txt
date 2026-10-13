@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://estudiohz-arq.github.io/sitemap.xml
